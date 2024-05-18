@@ -1,4 +1,4 @@
-## <p alighn="center"> Business Questions
+## Business Questions
 
 This is an Exploratory Data Analysis (EDA) and the goal is to explore the business patterns in the data and summarize discoveries into meaningful sales insights.
 
@@ -13,4 +13,4 @@ FROM [Business Intel_Phone Sales_Prep with Calendar Table2];
 
 ### Output:
  Total_Sales
-1 | 127204800
+1 | 12720480000
