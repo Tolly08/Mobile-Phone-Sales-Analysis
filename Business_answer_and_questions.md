@@ -17,7 +17,7 @@ FROM [Business Intel_Phone Sales_Prep with Calendar Table2];
 1 | 12720480000
 
 ### The total sales for the four years (2018-2021) is $127,204,480,000
-
+---
 
 ### Total Number of Orders
 ```sql
@@ -29,9 +29,9 @@ FROM [Business Intel_Phone Sales_Prep with Calendar Table2];
  -----|----------|
 1 | 152344|
 
-
-#### The total number of orders is 152,344 within the four years (2018-2021)
-
+#### .The total number of orders is 152,344 within the four years (2018-2021)
+---
+ 
  ### Brand with the highest price 
  ```sql
 SELECT TOP 1 Brand, MAX(Unit_Price) AS Highest_price
@@ -45,6 +45,7 @@ Brand | Highest_Price
 Apple| 1200
 
 #### Apple as a brand are know for luxury which explains why it has the highest price ($1200). Apple excels in providing a seamless, high-quality user experience  
+---
 
 ### Brand with the Lowest price 
  ```sql
@@ -59,9 +60,9 @@ Brand | Lowest_price
 Huawei| 450
 
  #### Huawei offers a wide range of innovative products with a focus on emerging markets thereby making their products affordable
+---
 
-
-### Brand with highest number of orders
+###  Brand with highest number of orders
 ``` sql
 SELECT Brand, SUM(DISTINCT AMOUNT) AS Total_Orders
  FROM [Business Intel_Phone Sales_Prep with Calendar Table2]
@@ -79,7 +80,7 @@ Motorola	| 6679
 Huawei	| 5827
 
 #### LG and Samsung are brand which produces both luxury and affordable product which explains why they have the highest order
-
+---
 
 ### Extracting year from Date and update the table 
 ```sql
@@ -127,7 +128,8 @@ Oeschle	| Colombia |	1464400	|2021
 #### - In 2018, Guatemala and Oeschle(Distibutor) has the best sales performance of a total sales of $868,460 
 #### -In 2019, Columbia  and Tottus (a distributor) has the best sales performance of a total of $1,305,000
 #### -In 2020, USA and Tottus (a distributor) has the best sales performance of a total of $899,300
-#### -In 2021, Columbia and Oeschle(Distibutor) has the best sales performance of a total of $899,300
+#### -In 2021, Columbia and Oeschle(Distibutor) has the best sales performance of a total of $1,464,400
+---
 
 ### Each year, which brand is the best seller in each country and distributor?
 ```sql
