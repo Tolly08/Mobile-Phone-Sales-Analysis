@@ -79,7 +79,7 @@ Nokia	| 7294
 Motorola	| 6679
 Huawei	| 5827
 
-#### LG and Samsung are brand which produces both luxury and affordable product which explains why they have the highest order
+#### LG and Samsung are brand which produces both luxury and affordable product(phones), Samsung has which explains why they have the highest order
 ---
 
 ### Extracting year from Date and update the table 
@@ -156,7 +156,9 @@ LG	| Colombia	| Tottus | 2021 | 793600
 
 ### Insight
 - Apple has the best sales in 2018 and 2019 with sales of $691,200 and 1,118,000 respectively which reduced in 2020 which might be due to the pandemic.
--In 2021, LG was the best selling brand with total sales of $793,600
+
+-In 2020, Samsung was the best selling brand with total sales of $793,600.
+Samsung offers a wide range of smartphones that cater to various market segments. From budget-friendly models to high-end flagship devices, Samsung ensures that there is a product for every consumer, regardless of their budget or needs. This extensive portfolio allows Samsung to capture a broad customer base globally. Which makes them affordable even during pandemic
 ---
 
 ### Who is each country's most successful sales rep and distributor
@@ -232,4 +234,4 @@ Country | YEAR_N | Inventory_cost
  Mexico	| 2018 | 7590
 Venezuela	| 2019 | 5670
 Switzerland	| 2020 | 4640
-Frace |	2021 | 18150
+France |	2021 | 18150
