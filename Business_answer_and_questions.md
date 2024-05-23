@@ -155,10 +155,9 @@ Samsung	| Portugal | Tottus	| 2020 | 544480
 LG	| Colombia	| Tottus | 2021 | 793600
 
 ### Insight
-- Apple has the best sales in 2018 and 2019 with sales of $691,200 and 1,118,000 respectively which reduced in 2020 which might be due to the pandemic.
+#### - Apple has the best sales in 2018 and 2019 with sales of $691,200 and 1,118,000 respectively which reduced in 2020 which might be due to the pandemic.
 
--In 2020, Samsung was the best selling brand with total sales of $793,600.
-Samsung offers a wide range of smartphones that cater to various market segments. From budget-friendly models to high-end flagship devices, Samsung ensures that there is a product for every consumer, regardless of their budget or needs. This extensive portfolio allows Samsung to capture a broad customer base globally. Which makes them affordable even during pandemic
+#### -In 2020, Samsung was the best selling brand with total sales of $793,600 Samsung offers a wide range of smartphones that cater to various market segments. From budget-friendly models to high-end flagship devices, Samsung ensures that there is a product for every consumer, regardless of their budget or needs. This extensive portfolio allows Samsung to capture a broad customer base globally. Which makes them affordable even during pandemic
 ---
 
 ### Who is each country's most successful sales rep and distributor
