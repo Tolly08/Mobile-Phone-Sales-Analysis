@@ -102,6 +102,8 @@ ADD MONTH_NEW NVARCHAR (50);
 UPDATE [Business Intel_Phone Sales_Prep with Calendar Table2]
 SET MONTH_NEW = DATENAME(Month,[Date]);
 ``` 
+---
+
 ### This leads us to the next question
 
 ### From 2018-2021, which country and distributor had the best sales performance?
@@ -125,6 +127,8 @@ Tottus	| Colombia	| 1305000 |	2019
 Tottus	| USA |	899300 | 2020
 Oeschle	| Colombia |	1464400	|2021
 
+## Insights 
+
 #### - In 2018, Guatemala and Oeschle(Distibutor) has the best sales performance of a total sales of $868,460 
 #### -In 2019, Columbia  and Tottus (a distributor) has the best sales performance of a total of $1,305,000
 #### -In 2020, USA and Tottus (a distributor) has the best sales performance of a total of $899,300
@@ -133,7 +137,7 @@ Oeschle	| Colombia |	1464400	|2021
 
 ### Each year, which brand is the best seller in each country and distributor?
 ```sql
-SELECT Brand, Country, Distributor, YEAR_N
+SELECT Brand, Country, Distributor, YEAR_N, Total_sales
 FROM (
 SELECT YEAR_N, Brand, Country, Distributor, SUM(Sales) AS Total_sales, 
        ROW_NUMBER() OVER (PARTITION BY YEAR_N ORDER BY SUM(Sales)DESC) AS RANK_S
@@ -143,12 +147,17 @@ SELECT YEAR_N, Brand, Country, Distributor, SUM(Sales) AS Total_sales,
 ```
 ### Output
 
-Brand| Country | Distributor | YEAR_N
---| -- | -- |--
-Apple|	Cuba |	Oeschle	| 2018
-Apple |	Colombia |	Tottus | 2019
-Samsung	| Portugal | Tottus	| 2020
-LG	| Colombia	| Tottus | 2021
+Brand| Country | Distributor | YEAR_N | Total_sales
+--| -- | -- |-- | --
+Apple|	Cuba |	Oeschle	| 2018 | 691200
+Apple |	Colombia |	Tottus | 2019 | 1188000
+Samsung	| Portugal | Tottus	| 2020 | 544480
+LG	| Colombia	| Tottus | 2021 | 793600
+
+### Insight
+- Apple has the best sales in 2018 and 2019 with sales of $691,200 and 1,118,000 respectively which reduced in 2020 which might be due to the pandemic.
+-In 2021, LG was the best selling brand with total sales of $793,600
+---
 
 ### Who is each country's most successful sales rep and distributor
 
@@ -162,36 +171,36 @@ SELECT Country, Distributor, SUM(Sales) AS Total_sales,
    WHERE RANK_S = 1;
    ```
    ### Output
-   Country | Distributor
-   -- | --
-   Argentina | Tottus
-Bolivia	| Tottus
-Brasil	| Tottus
-Canada	| Tottus
-Chile	| Oeschle
-Colombia | Tottus
-Cuba | Oeschle
-Denmark	| Tottus
-El Salvador	| Tottus
-France	| Oeschle
-Germany	| Oeschle
-Guatemala	| Tottus
-Ireland	| Tottus
-Jamaica	| Oeschle
-Mexico	| Oeschle
-Paraguay | Plaza Vea
-Peru | Oeschle
-Portugal | Tottus
-Spain | Tottus
-Switzerland | Plaza Vea
-United Kingdom	| Tottus
-Uruguay	| Oeschle
-USA	| Tottus
-Venezuela	| Tottus
+   Country | Distributor | Total_sales
+   -- | -- | --
+Argentina |	Tottus | 1481420
+Bolivia | Tottus | 1826340
+Brasil | Tottus |	1412320
+Canada | Tottus |	1735020
+Chile	| Oeschle |	1712020
+Colombia	| Tottus |	3183400
+Cuba | Oeschle |	1828020
+Denmark | Tottus | 2778740
+El Salvador	| Tottus	| 1886240
+France | Oeschle	| 2042360
+Germany	| Oeschle |	1427960
+Guatemala | Tottus |	2025100
+Ireland | Tottus	| 1909660
+Jamaica | Oeschle |	1468440
+Mexico | Oeschle | 1779240
+Paraguay	| Plaza Vea	| 1767880
+Peru	| Oeschle | 1616480
+Portugal	| Tottus	| 1445980
+Spain	| Tottus	| 1424960
+Switzerland	| Plaza Vea	| 1172320
+United Kingdom	| Tottus	| 1800100
+Uruguay | Oeschle	| 1493280
+USA | Tottus | 1470480
+Venezuela | Tottus |	1226300
 
 ### Which country had the highest inventory cost from 2018-2021?
 ```sql
-SELECT Country, YEAR_N 
+SELECT Country, YEAR_N, Inventory_cost
 FROM (
  SELECT Country, YEAR_N, SUM(Unit_Cost) AS Inventory_cost,
  ROW_NUMBER() OVER (PARTITION BY YEAR_N ORDER BY SUM(Unit_Cost) DESC) AS RANK_S
@@ -201,16 +210,16 @@ FROM (
  ```
 
  ### Output
- Country | YEAR_N
- -- | --
- Cuba	| 2018
-Denmark	| 2019
-Chile	| 2020
-Ireland |	2021
-
+ Country | YEAR_N | Inventory_cost
+  -- | -- | --
+ Cuba	| 2018 | 23900
+Denmark	| 2019 | 23270
+Chile	| 2020 | 23690
+Ireland | 2021 | 35790
+---
 #### Which country had the lowest inventory cost from 2018-2021?
 ```sql
-SELECT Country, YEAR_N 
+SELECT Country, YEAR_N, Inventory_cost
 FROM (
  SELECT Country, YEAR_N, SUM(Unit_Cost) AS Inventory_cost,
  ROW_NUMBER() OVER (PARTITION BY YEAR_N ORDER BY SUM(Unit_Cost) ASC) AS RANK_S
@@ -218,9 +227,9 @@ FROM (
  GROUP BY Country,YEAR_N) AS RANK_S
  WHERE RANK_S = 1;
  ```
-Country | YEAR_N
--- | --
- Mexico	| 2018
-Venezuela	| 2019
-Switzerland	| 2020
-Frace |	2021
+Country | YEAR_N | Inventory_cost
+-- | -- | --
+ Mexico	| 2018 | 7590
+Venezuela	| 2019 | 5670
+Switzerland	| 2020 | 4640
+Frace |	2021 | 18150
