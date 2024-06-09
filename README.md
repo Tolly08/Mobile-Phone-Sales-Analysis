@@ -8,3 +8,5 @@ Mobile phone sales analysis provides valuable insights into the trends, preferen
 The purpose of this analysis is to understand and answer some business questions related to the performance of each brand, gain some insights and provide some recommendations to boost sales
 ## Business Case Study Questions and Answers 
 [Solutions](Business_answer_and_questions.md)
+
+Thanks for stoping by!
